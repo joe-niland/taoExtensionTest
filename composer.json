@@ -1,0 +1,31 @@
+{
+    "name": "joe-niland/tao-extension-test",
+    "description": "Sample extension",
+    "type": "tao-extension",
+    "authors": [
+        {
+            "name": "Joe Niland",
+            "email": "joe@originalmind.com.au"
+        }
+    ],
+    "license": "proprietary",
+    "extra": {
+        "tao-extension-name": "taoExtensionTest"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "oat-sa/tao-core": ">=54.14.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "JoeNiland\\taoExtensionTest\\": ""
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "oat-sa/oatbox-extension-installer": true,
+            "oat-sa/composer-npm-bridge": true
+        }
+    }
+}
