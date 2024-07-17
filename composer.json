@@ -1,20 +1,25 @@
 {
     "name": "joe-niland/tao-extension-test",
-    "type": "library",
-    "require": {
-        "easyrdf/easyrdf": "^1.1"
-    },
-    "license": "proprietary",
-    "autoload": {
-        "psr-4": {
-            "JoeNiland\\TaoExtensionTest\\": "src/"
-        }
-    },
+    "description": "Sample extension",
+    "type": "tao-extension",
     "authors": [
         {
             "name": "Joe Niland",
             "email": "joe@originalmind.com.au"
         }
     ],
-    "minimum-stability": "dev"
+    "license": "proprietary",
+    "extra": {
+        "tao-extension-name": "taoExtensionTest"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "easyrdf/easyrdf": "^1.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "JoeNiland\\TaoExtensionTest\\": ""
+        }
+    }
 }
