@@ -1,0 +1,20 @@
+{
+    "name": "joe-niland/tao-extension-test",
+    "type": "library",
+    "require": {
+        "easyrdf/easyrdf": "dev-main"
+    },
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "JoeNiland\\TaoExtensionTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joe Niland",
+            "email": "joe@originalmind.com.au"
+        }
+    ],
+    "minimum-stability": "dev"
+}
