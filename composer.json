@@ -14,12 +14,19 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "easyrdf/easyrdf": "^1.1"
+        "easyrdf/easyrdf": "^1.1",
+        "oat-sa/tao-core": ">=54.14.7"
     },
-
     "autoload": {
         "psr-4": {
             "JoeNiland\\TaoExtensionTest\\": ""
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "oat-sa/oatbox-extension-installer": true,
+            "oat-sa/composer-npm-bridge": true
         }
     }
 }

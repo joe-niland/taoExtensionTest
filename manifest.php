@@ -62,10 +62,10 @@ return [
 		//		"DIR_HELPERS"			=> $extpath . "helpers" . DIRECTORY_SEPARATOR,
 
 		# default module name
-		//		'DEFAULT_MODULE_NAME'	=> 'Browser',
+		'DEFAULT_MODULE_NAME'	=> 'Users',
 
 		#default action name
-		//		'DEFAULT_ACTION_NAME'	=> 'getTreeData',
+		'DEFAULT_ACTION_NAME'	=> 'index',
 
 		#BASE PATH: the root path in the file system (usually the document root)
 		//		'BASE_PATH'				=> $extpath,

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE extension SYSTEM "../../tao/doc/structures.dtd">
+<!DOCTYPE structures SYSTEM "../../tao/doc/structures.dtd">
 <structures>
+    <structure id="users" name="Users" level="1" group="main">
+        <sections>
+            <section id="manage_tests" name="Manage tests" url="/taoExtensionTest/Users/index">
+                <actions allowClassActions="true">
+                    <action id="test-xml-editor" name="Get Current User" url="/taoExtensionTest/Users/getCurrentUser" group="content" context="instance">
+                        <icon id="icon-list"/>
+                    </action>
+                </actions>
+            </section>
+        </sections>
+    </structure>
 </structures>
