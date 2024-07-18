@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32a0a1756f7759128c9d71bfc93cca62",
+    "content-hash": "abb697c363af51b3691b7e8714eadf42",
     "packages": [
         {
             "name": "clearfw/clearfw",
