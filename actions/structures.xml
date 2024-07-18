@@ -3,10 +3,10 @@
 <structures>
     <structure id="users" name="Users" level="1" group="main">
         <sections>
-            <section id="manage_tests" name="Manage tests" url="/taoExtensionTest/Users/index">
+            <section id="manage_users" name="Manage Users" url="/taoExtensionTest/Users/index">
                 <actions allowClassActions="true">
                     <action id="test-xml-editor" name="Get Current User" url="/taoExtensionTest/Users/getCurrentUser" group="content" context="instance">
-                        <icon id="icon-list"/>
+                        <icon id="icon-users"/>
                     </action>
                 </actions>
             </section>
