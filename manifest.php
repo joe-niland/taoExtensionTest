@@ -31,31 +31,33 @@ return [
 	'author' => 'Joe Niland',
 	'dependencies' => array('tao'),
 	'models' => array(),
-	// 'managementRole' => 'http://www.tao.lu/Ontologies/TAO.rdf#TaoManagerRole',
+	'managementRole' => 'http://www.tao.lu/Ontologies/TAO.rdf#TaoManagerRole',
 	'acl' => [
 		['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoExtensionTest')],
-		[
-			'grant',
-			'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole',
-			[
-				'ext' => 'taoExtensionTest',
-				'mod' => 'Users',
-			],
-		],
-		['grant', TaoRoles::REST_PUBLISHER, ['ext' => 'taoExtensionTest', 'mod' => 'Users']],
+		['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'index')],
+		['grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole', array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'public')],
+		// [
+		// 	'grant',
+		// 	'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole',
+		// 	[
+		// 		'ext' => 'taoExtensionTest',
+		// 		'mod' => 'Users',
+		// 	],
+		// ],
+		// ['grant', TaoRoles::REST_PUBLISHER, ['ext' => 'taoExtensionTest', 'mod' => 'Users']],
 	],
 	'install' => array(),
-	'classLoaderPackages' => array(
-		dirname(__FILE__) . '/actions/',
-		dirname(__FILE__) . '/helpers/'
-	),
+	// 'classLoaderPackages' => array(
+	// 	dirname(__FILE__) . '/actions/',
+	// 	dirname(__FILE__) . '/helpers/'
+	// ),
 	// 'autoload' => array(
 	// 	'psr-4' => array(
 	// 		'JoeNiland\\taoExtensionTest\\' => dirname(__FILE__) . DIRECTORY_SEPARATOR
 	// 	)
 	// ),
 	'routes' => array(
-		'/taoExtensionTest' => 'JoeNiland\\taoExtensionTest\\actions'
+		'taoExtensionTest' => 'JoeNiland\\taoExtensionTest\\controller'
 	),
 	'constants' => array(
 		# actions directory
@@ -83,6 +85,6 @@ return [
 		'BASE_URL'				=> ROOT_URL . 'taoExtensionTest/',
 	),
 	'extra' => [
-		'structures' => __DIR__ . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'structures.xml',
+		'structures' => __DIR__ . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'structures.xml',
 	],
 ];
