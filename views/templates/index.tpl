@@ -9,8 +9,9 @@
 		<?php
 		foreach (get_data('users') as $user) {
 			echo '<div>';
-			echo '<h2>' . $user->getUsername() . '</h2>';
-			echo '<p>' . $user->getFirstName() . ' ' . $user->getLastName() . '</p>';
+			echo '<h2>' . $user['login'] . '</h2>';
+			echo '<p>' . $user['firstname'] . ' ' . $user['lastname'] . '</p>';
+			echo '<p>' . $user['email'] . '</p>';
 			echo '</div>';
 		}
 		?>
