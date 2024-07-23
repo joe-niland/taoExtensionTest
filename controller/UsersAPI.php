@@ -15,6 +15,7 @@ namespace JoeNiland\taoExtensionTest\controller;
 use common_Logger;
 use tao_models_classes_UserService;
 use oat\tao\model\http\HttpJsonResponseTrait;
+use oat\tao\model\TaoOntology;
 
 class UsersAPI extends \tao_actions_RestController
 {
@@ -42,6 +43,10 @@ class UsersAPI extends \tao_actions_RestController
 	public function index()
 	{
 		common_Logger::d('UsersAPI::index called');
-		$this->setSuccessJsonResponse(['users' => $this->service->toTree()]);
+		$this->setSuccessJsonResponse(
+			[
+				'users' => $this->service->toTree($this->getClass(TaoOntology::CLASS_URI_TAO_USER), [])
+			]
+		);
 	}
 }
