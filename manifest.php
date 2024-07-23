@@ -20,8 +20,7 @@
  * 
  */
 
-// $extpath = dirname(__FILE__) . DIRECTORY_SEPARATOR;
-// $taopath = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'tao' . DIRECTORY_SEPARATOR;
+use oat\tao\model\user\TaoRoles;
 
 return [
 	'name' => 'taoExtensionTest',
@@ -32,21 +31,34 @@ return [
 	'author' => 'Joe Niland',
 	'dependencies' => array('tao'),
 	'models' => array(),
-	'acl' => array(
-		array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoExtensionTest')),
-	),
+	'managementRole' => TaoRoles::GLOBAL_MANAGER,
+	'acl' => [
+		['grant', TaoRoles::GLOBAL_MANAGER, array('ext' => 'taoExtensionTest')],
+		['grant', TaoRoles::GLOBAL_MANAGER, array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'index')],
+		['grant', TaoRoles::ANONYMOUS, array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'public')],
+		['grant', TaoRoles::GLOBAL_MANAGER, array('ext' => 'taoExtensionTest', 'mod' => 'UsersAPI', 'act' => 'index')],
+		// [
+		// 	'grant',
+		// 	'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole',
+		// 	[
+		// 		'ext' => 'taoExtensionTest',
+		// 		'mod' => 'Users',
+		// 	],
+		// ],
+		// ['grant', TaoRoles::REST_PUBLISHER, ['ext' => 'taoExtensionTest', 'mod' => 'Users']],
+	],
 	'install' => array(),
-	'classLoaderPackages' => array(
-		dirname(__FILE__) . '/actions/',
-		dirname(__FILE__) . '/helpers/'
-	),
+	// 'classLoaderPackages' => array(
+	// 	dirname(__FILE__) . '/actions/',
+	// 	dirname(__FILE__) . '/helpers/'
+	// ),
 	// 'autoload' => array(
 	// 	'psr-4' => array(
 	// 		'JoeNiland\\taoExtensionTest\\' => dirname(__FILE__) . DIRECTORY_SEPARATOR
 	// 	)
 	// ),
 	'routes' => array(
-		'/taoExtensionTest' => 'JoeNiland\\taoExtensionTest\\actions'
+		'taoExtensionTest' => 'JoeNiland\\taoExtensionTest\\controller'
 	),
 	'constants' => array(
 		# actions directory
@@ -62,26 +74,18 @@ return [
 		//		"DIR_HELPERS"			=> $extpath . "helpers" . DIRECTORY_SEPARATOR,
 
 		# default module name
-		//		'DEFAULT_MODULE_NAME'	=> 'Browser',
+		'DEFAULT_MODULE_NAME'	=> 'Users',
 
 		#default action name
-		//		'DEFAULT_ACTION_NAME'	=> 'getTreeData',
+		'DEFAULT_ACTION_NAME'	=> 'index',
 
 		#BASE PATH: the root path in the file system (usually the document root)
-		//		'BASE_PATH'				=> $extpath,
+		'BASE_PATH'				=> __DIR__,
 
 		#BASE URL (usually the domain root)
 		'BASE_URL'				=> ROOT_URL . 'taoExtensionTest/',
-
-		#BASE WWW the web resources path
-		//		'BASE_WWW'				=> ROOT_URL . '/taoExtensionTest/views/',
-
-		//		'DOCS_PATH'				=> $extpath . "views" . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR,
-		//		'DOCS_URL'				=> ROOT_URL . "/taoExtensionTest/views/data/",
-
-		#TAO extension Paths
-		//		'TAOBASE_WWW'			=> ROOT_URL  . '/tao/views/',
-		//		'TAOVIEW_PATH'			=> $taopath . 'views' . DIRECTORY_SEPARATOR,
-		//		'TAO_TPL_PATH'			=> $taopath . 'views' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR,
-	)
+	),
+	'extra' => [
+		'structures' => __DIR__ . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'structures.xml',
+	],
 ];
