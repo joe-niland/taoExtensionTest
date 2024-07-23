@@ -14,11 +14,11 @@ namespace JoeNiland\taoExtensionTest\controller;
 
 use common_Logger;
 use tao_models_classes_UserService;
+use oat\tao\model\http\HttpJsonResponseTrait;
 
-class Users extends \tao_actions_CommonModule // \tao_actions_RestController // \tao_actions_CommonModule
+class Users extends \tao_actions_RestController // \tao_actions_CommonModule
 {
-	// use TaskLogActionTrait;
-	// use HttpJsonResponseTrait;
+	use HttpJsonResponseTrait;
 
 	/**
 	 * constructor: initialize the service and the default data
