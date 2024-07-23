@@ -12,6 +12,7 @@
 
 namespace JoeNiland\taoExtensionTest\controller;
 
+use common_Logger;
 use tao_models_classes_UserService;
 
 class Users extends \tao_actions_CommonModule // \tao_actions_RestController // \tao_actions_CommonModule
@@ -40,12 +41,14 @@ class Users extends \tao_actions_CommonModule // \tao_actions_RestController // 
 	 */
 	public function index()
 	{
+		common_Logger::d('index called');
 		$this->setView('index.tpl');
 		// $this->returnFailure(new \common_exception_NotImplemented('This API does not support this call.'));
 	}
 
 	public function public()
 	{
+		common_Logger::d('public called');
 		$this->setSuccessJsonResponse(['message' => 'This is a public route.']);
 	}
 }
