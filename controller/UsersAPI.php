@@ -16,8 +16,10 @@ use common_Logger;
 use tao_models_classes_UserService;
 use oat\tao\model\http\HttpJsonResponseTrait;
 
-class Users extends \tao_actions_CommonModule // \tao_actions_RestController 
+class UsersAPI extends \tao_actions_RestController
 {
+	use HttpJsonResponseTrait;
+
 	/**
 	 * constructor: initialize the service and the default data
 	 * @return Docs
@@ -34,22 +36,12 @@ class Users extends \tao_actions_CommonModule // \tao_actions_RestController
 	}
 
 	/**
-	 * Show a view
+	 * Show the list of documents
 	 * @return void
 	 */
 	public function index()
 	{
-		common_Logger::d('Users::index called');
-
-		$users = $this->service->getAllUsers();
-
-		$this->setData('users', $users);
-		$this->setView('index.tpl');
-	}
-
-	public function public()
-	{
-		common_Logger::d('Users::public called');
-		$this->setView('public.tpl');
+		common_Logger::d('UsersAPI::index called');
+		$this->setSuccessJsonResponse(['users' => json_encode($this->service->getAllUsers())]);
 	}
 }
