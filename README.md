@@ -47,7 +47,7 @@
     ```
 
 5. Log in to your TAO instance as admin
-6. Go to /tao/Main/index?structure=settings&ext=tao&section=settings_ext_mng
+6. Go to `/tao/Main/index?structure=settings&ext=tao&section=settings_ext_mng`
 
     Your extension should be on the right side of the screen
     Click on the extension checkbox and click install
