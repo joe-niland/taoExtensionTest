@@ -34,8 +34,8 @@ return [
 	'managementRole' => 'http://www.tao.lu/Ontologies/TAO.rdf#GlobalManagerRole',
 	'acl' => [
 		['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#GlobalManagerRole', array('ext' => 'taoExtensionTest')],
-		['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#GlobalManagerRole', array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'index')],
-		['grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole', array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'public')],
+		['grant', TaoRoles::ANONYMOUS, array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'index')],
+		['grant', TaoRoles::ANONYMOUS, array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'public')],
 		// [
 		// 	'grant',
 		// 	'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole',
