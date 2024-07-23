@@ -12,15 +12,9 @@
 
 namespace JoeNiland\taoExtensionTest\actions;
 
-use common_exception_BadRequest;
-use oat\tao\model\http\HttpJsonResponseTrait;
-use oat\tao\model\taskQueue\TaskLogActionTrait;
-use core_kernel_classes_Resource as Resource;
-use Exception;
-use Request;
 use tao_models_classes_UserService;
 
-class taoExtensionTest_users extends \tao_actions_RestController // \tao_actions_CommonModule
+class Users extends \tao_actions_CommonModule // \tao_actions_RestController // \tao_actions_CommonModule
 {
 	// use TaskLogActionTrait;
 	// use HttpJsonResponseTrait;
