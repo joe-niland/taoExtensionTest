@@ -31,11 +31,12 @@ return [
 	'author' => 'Joe Niland',
 	'dependencies' => array('tao'),
 	'models' => array(),
-	'managementRole' => 'http://www.tao.lu/Ontologies/TAO.rdf#GlobalManagerRole',
+	'managementRole' => TaoRoles::GLOBAL_MANAGER,
 	'acl' => [
-		['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#GlobalManagerRole', array('ext' => 'taoExtensionTest')],
-		['grant', TaoRoles::ANONYMOUS, array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'index')],
+		['grant', TaoRoles::GLOBAL_MANAGER, array('ext' => 'taoExtensionTest')],
+		['grant', TaoRoles::GLOBAL_MANAGER, array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'index')],
 		['grant', TaoRoles::ANONYMOUS, array('ext' => 'taoExtensionTest', 'mod' => 'Users', 'act' => 'public')],
+		['grant', TaoRoles::GLOBAL_MANAGER, array('ext' => 'taoExtensionTest', 'mod' => 'UsersAPI', 'act' => 'index')],
 		// [
 		// 	'grant',
 		// 	'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole',
