@@ -10,7 +10,7 @@
  * 
  */
 
-namespace JoeNiland\taoExtensionTest\actions;
+namespace JoeNiland\taoExtensionTest\controller;
 
 use tao_models_classes_UserService;
 
