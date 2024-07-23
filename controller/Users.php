@@ -16,7 +16,7 @@ use common_Logger;
 use tao_models_classes_UserService;
 use oat\tao\model\http\HttpJsonResponseTrait;
 
-class Users extends \tao_actions_RestController // \tao_actions_CommonModule
+class Users extends \tao_actions_CommonModule // \tao_actions_RestController 
 {
 	use HttpJsonResponseTrait;
 
