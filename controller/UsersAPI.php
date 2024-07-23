@@ -42,6 +42,6 @@ class UsersAPI extends \tao_actions_RestController
 	public function index()
 	{
 		common_Logger::d('UsersAPI::index called');
-		$this->setSuccessJsonResponse(['users' => $this->service->getAllUsers()]);
+		$this->setSuccessJsonResponse(['users' => json_decode($this->service->getAllUsers())]);
 	}
 }
